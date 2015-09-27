@@ -1,0 +1,287 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015-09-27, 17:02:01
+    Author     : Tomek
+*/
+
+#content{
+    margin: 0 auto;
+    width: 800px;
+    padding: 0px;
+}
+
+#menu_top{
+    margin: 0px;
+    float: left;
+    width: 100%;
+    padding: 0px;
+}
+
+#menu_top img{
+    display: block;
+    float: left;
+}
+
+#top{
+    width: 800px;
+    height: 150px;
+    margin: 0 auto;
+    padding: 0px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.clear{
+    clear: both;
+}
+
+#left{
+    width: 265px;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+}
+
+#menu_left{
+    width: 265px;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+}
+
+#main_menu_left{
+    width: 265px;
+    margin: 0px;
+    float: left;
+    padding: 0px;
+    
+}
+
+#info{
+    width: 780px;
+    padding: 0px;
+    margin: 10px;
+    margin-top: 0px;
+    float: left;
+
+}
+
+
+
+
+#login_form{
+    width: 100%;
+    float: left;
+}
+
+#info p{
+	color: #808080;
+	font-size: 12px;
+	font-family: Verdana;
+        margin-left: 20px;
+	margin-bottom: 0px;
+        padding: 0px;
+        
+}
+
+#info input[type=text], input[type=password]{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #527bff;
+	margin-left: 10px;
+        margin-top: 8px;
+
+}
+
+#registerButton{
+    margin-left: 20px;
+    margin-top: 3px;
+    
+}
+
+
+#info input[type=image]{
+    width: 81px;
+    height: 17px;
+    margin-top: 10px;
+    margin-left: 70px;
+    padding: 0px;
+}
+
+.legend{
+    float: left;
+    width: 30%;
+}
+
+.fields{
+    float: left;
+    width: 70%;
+}
+        
+#footer{
+    width: 800px;
+    float: left;
+    margin: 0 auto;
+    padding: 0px;
+}
+    
+
+
+
+.tableContainer {
+	margin:0px;padding:0px;
+	width:100%;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+	
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+        margin-top:15px;
+}.tableContainer table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.tableContainer tr:last-child td:last-child {
+	-moz-border-radius-bottomright:0px;
+	-webkit-border-bottom-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.tableContainer table tr:first-child td:first-child {
+	-moz-border-radius-topleft:0px;
+	-webkit-border-top-left-radius:0px;
+	border-top-left-radius:0px;
+}
+.tableContainer table tr:first-child td:last-child {
+	-moz-border-radius-topright:0px;
+	-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+}.tableContainer tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:0px;
+	-webkit-border-bottom-left-radius:0px;
+	border-bottom-left-radius:0px;
+}.tableContainer tr:hover td{
+	
+}
+.tableContainer tr:nth-child(odd){ background-color:#e5e5e5; }
+.tableContainer tr:nth-child(even)    { background-color:#ffffff; }.tableContainer td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:7px;
+	font-size:12px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}.tableContainer tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.tableContainer tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.tableContainer tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.tableContainer tr:first-child td{
+		background:-o-linear-gradient(bottom, #cccccc 5%, #b2b2b2 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #b2b2b2) );
+	background:-moz-linear-gradient( center top, #cccccc 5%, #b2b2b2 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc", endColorstr="#b2b2b2");	background: -o-linear-gradient(top,#cccccc,b2b2b2);
+
+	background-color:#cccccc;
+	border:0px solid #000000;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#000000;
+}
+.tableContainer tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #cccccc 5%, #b2b2b2 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #b2b2b2) );
+	background:-moz-linear-gradient( center top, #cccccc 5%, #b2b2b2 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#cccccc", endColorstr="#b2b2b2");	background: -o-linear-gradient(top,#cccccc,b2b2b2);
+
+	background-color:#cccccc;
+}
+.tableContainer tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.tableContainer tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+
+
+
+h1{
+    font-weight:normal;
+    color:#a6a6a6;
+    font-size:18px;
+    text-align:left;
+    font-family:tahoma, verdana, arial, sans-serif;
+    margin:0px;
+    padding:0px;
+    
+}
+
+
+h2{
+    font-weight:normal;
+    color:#FF0000;
+    font-size:18px;
+    text-align:left;
+    font-family:tahoma, verdana, arial, sans-serif;
+    margin:0px;
+    padding:0px;
+    
+}
+
+h3{
+    font-weight:normal;
+    color:#329632;
+    font-size:18px;
+    text-align:left;
+    font-family:tahoma, verdana, arial, sans-serif;
+    margin:0px;
+    padding:0px;
+    
+}
+
+hr{
+    margin-top: -1px;
+    
+    height: 0; 
+    border: 0;
+    border-bottom: 1px solid rgba(130, 160, 255, 1);
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+}
+
+
+ul.contact{
+    color: #808080;
+    font-size: 12px;
+    font-family: Verdana;
+    margin-left: 40px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
