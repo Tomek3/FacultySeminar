@@ -30,7 +30,7 @@ public class UserDAO implements IUserDAO {
 
     @Override
     public void addUser(User user) {
-        String query = "INSERT INTO WL_USER (USRLOGIN, USRPASSWORD, USRNAME, USRSURNAME, USRCOUNTRY, USRCITY, USRSTREET, USRPOSTCODE, USRPHONE, USRISADMIN) "
+        String query = "INSERT INTO FS_USER (USRLOGIN, USRPASSWORD, USRNAME, USRSURNAME, USRCOUNTRY, USRCITY, USRSTREET, USRPOSTCODE, USRPHONE, USRISADMIN) "
                 + "     VALUES (?,?,?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(query, new Object[]{
             user.getPesel(),
@@ -47,7 +47,7 @@ public class UserDAO implements IUserDAO {
 
     @Override
     public void editUser(User user){
-        String query = "update WL_USER set USRLOGIN = ?, USRNAME=?, USRSURNAME=?, USRCOUNTRY=?, USRPASSWORD=?, USRCITY=?, USRPOSTCODE=?, USRSTREET=?, USRPHONE=?, USRISADMIN=?"
+        String query = "update FS_USER set USRLOGIN = ?, USRNAME=?, USRSURNAME=?, USRCOUNTRY=?, USRPASSWORD=?, USRCITY=?, USRPOSTCODE=?, USRSTREET=?, USRPHONE=?, USRISADMIN=?"
                + " WHERE USRLOGIN=?";
        
         jdbcTemplate.update(query, new Object[] {
@@ -67,7 +67,7 @@ public class UserDAO implements IUserDAO {
     
     @Override
     public User getUser(String userLogin) {
-        String query = "SELECT * FROM APP.WL_USER WHERE USRLOGIN=?";
+        String query = "SELECT * FROM FS_USER WHERE USRLOGIN=?";
         User user = null;
         try {
             user = (User) jdbcTemplate.queryForObject(query, new UserMapper(), new Object[]{userLogin});
@@ -80,13 +80,13 @@ public class UserDAO implements IUserDAO {
 
     @Override
     public ArrayList<User> getAllUsers() {
-        String query = "SELECT * FROM APP.WL_USER";
+        String query = "SELECT * FROM FS_USER";
         return (ArrayList<User>) jdbcTemplate.query(query, new UserMapper(), new Object[]{});
     }
     
     @Override
     public Boolean loginAvailable(String userPesel){
-        String query = "SELECT * FROM APP.WL_USER WHERE USRLOGIN=?";
+        String query = "SELECT * FROM FS_USER WHERE USRLOGIN=?";
         User user = null;
         try {
             user = (User) jdbcTemplate.queryForObject(query, new UserMapper(), new Object[]{userPesel});
@@ -100,7 +100,7 @@ public class UserDAO implements IUserDAO {
     
     @Override
     public void removeUserByPesel(String userPesel){
-        String DELETE = " DELETE FROM WL_USER WHERE USRLOGIN=?";
+        String DELETE = " DELETE FROM FS_USER WHERE USRLOGIN=?";
         jdbcTemplate.update(DELETE, userPesel);
     }
     
