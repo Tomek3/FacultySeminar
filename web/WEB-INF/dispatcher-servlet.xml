@@ -35,5 +35,7 @@
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
+    
+    <bean class="WebsiteControllers.IndexController"  p:universalService-ref="universalService"/>
 
 </beans>
