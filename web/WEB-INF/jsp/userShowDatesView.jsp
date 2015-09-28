@@ -1,6 +1,6 @@
 <%-- 
-    Document   : panelUserView
-    Created on : 2015-09-28, 04:31:53
+    Document   : userShowDatesView
+    Created on : 2015-09-28, 13:04:26
     Author     : Tomek
 --%>
 
@@ -31,19 +31,34 @@
         <div id="top">
             <img src="${pageContext.request.contextPath}/img/top.jpg">
         </div>
-        
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Panel użytkownika</h1>
+                <h1>Daty seminariów</h1>
                 <hr />
-                <center>
-                    <br />
-                    <a href="usershowdates.htm">Rezerwacja seminarium</a><br />
-                    <br />
-
-                </center>
-
-                <a href="logout.htm">Wyloguj</a>
+                <div class="tableContainer" >
+                <table >
+                    <tr>
+                        <td>Id</td>
+                        <td>Nazwa</td>
+                        <td >Opis</td>
+                        <td>Data</td>
+                        <td></td>
+                        <td></td>
+                        <c:forEach items="${listOfSeminars}" var="seminar">
+                        <tr>
+                           <td><c:out value="${seminar.semId}"/></td>
+                           <td><c:out value="${seminar.semName}"/></td>
+                           <td><c:out value="${seminar.semDescription}"/></td>
+                           <td><c:out value="${seminar.semDate}"/></td>
+                           <td><a href="userreservedate.htm?semId=${seminar.semId}"><c:out value="Zarezerwuj"/></a></td>
+                           <td><a href="usermodifydate.htm?semId=${seminar.semId}"><c:out value="Modyfikuj rezerwacje"/></a></td>
+                       </tr>
+                    </c:forEach>
+                    </tr>
+                    
+                </table>
+            </div>
+                <a href="paneluser.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

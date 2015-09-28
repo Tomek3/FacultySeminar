@@ -49,5 +49,6 @@
     <bean class="WebsiteControllers.AdminShowDatesController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminEditDateController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.AdminDeleteDateController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.UserShowDatesController"  p:universalService-ref="universalService"/>
 
 </beans>
