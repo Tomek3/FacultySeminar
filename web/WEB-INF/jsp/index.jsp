@@ -34,7 +34,7 @@
                 <h1>Witaj w systemie rezerwacji!</h1>
                 <hr />
                 <div class="legend">
-                    <p>PESEL:</p>
+                    <p>Login:</p>
                     <p>Hasło:</p>
                 </div>
                 <div class="fields">

@@ -33,9 +33,14 @@
    <bean id="userDAO" class="DAO.UserDAO">
         <property name="dataSource" ref="dataSource"/>
    </bean>
+   
+   <bean id="seminarDAO" class="DAO.SeminarDAO">
+        <property name="dataSource" ref="dataSource"/>
+   </bean>
     
     <bean name="universalService" class="service.UniversalService">
         <property name="userDAO" ref="userDAO"/>
+        <property name="seminarDAO" ref="seminarDAO"/>
     </bean>
     
 

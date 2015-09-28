@@ -6,7 +6,9 @@
 
 package service;
 
+import DAO.ISeminarDAO;
 import DAO.IUserDAO;
+import Seminar.Seminar;
 import User.LoginData;
 import User.LoginWrapper;
 import User.User;
@@ -17,7 +19,16 @@ import java.util.ArrayList;
  * @author Tomek
  */
 public class UniversalService {
+
+    public ISeminarDAO getSeminarDAO() {
+        return seminarDAO;
+    }
+
+    public void setSeminarDAO(ISeminarDAO seminarDAO) {
+        this.seminarDAO = seminarDAO;
+    }
     IUserDAO userDAO;
+    ISeminarDAO seminarDAO;
     
     public IUserDAO getUserDAO() {
         return userDAO;
@@ -69,5 +80,11 @@ public class UniversalService {
         lw.check();
         
         return lw;
+    }
+    
+    
+    //SEMINAR
+    public void addSeminar(Seminar seminar) {
+        seminarDAO.addSeminar(seminar);
     }
 }
