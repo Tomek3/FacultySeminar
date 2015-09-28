@@ -7,6 +7,7 @@
 package DAO;
 
 import Seminar.Seminar;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -16,4 +17,8 @@ import java.util.Date;
 public interface ISeminarDAO {
     void addSeminar(Seminar seminar);
     Boolean isDateAlreadyExist(Date date);
+    ArrayList<Seminar> getAllSeminars();
+    Seminar getSeminar(String semId);
+    void editSeminar(Seminar seminar);
+    void removeSeminarById(String semId);
 }

@@ -9,6 +9,7 @@ package DAO;
 import Seminar.Seminar;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -50,6 +51,42 @@ public class SeminarDAO implements ISeminarDAO {
         }
         return seminar != null;
     }
+    
+    @Override
+    public ArrayList<Seminar> getAllSeminars() {
+        String query = "SELECT * FROM seminarDate";
+        return (ArrayList<Seminar>) jdbcTemplate.query(query, new SeminarMapper(), new Object[]{});
+    }
+    
+    public Seminar getSeminar(String semId){
+        String query = "SELECT * FROM seminarDate WHERE semId=?";
+        Seminar seminar = null;
+        try {
+            seminar = (Seminar) jdbcTemplate.queryForObject(query, new SeminarMapper(), new Object[]{semId});
+        } catch (Exception ex) {
+            System.out.println("Could not get Seminar from database for semId ["
+                    + semId + "]");
+        }
+        return seminar;
+    }
+    
+     public void editSeminar(Seminar seminar){
+          String query = "update seminarDate set semName = ?, semDescription=?, semAvailable=?"
+               + " WHERE semId=?";
+       
+        jdbcTemplate.update(query, new Object[] {
+            seminar.getSemName(),
+            seminar.getSemDescription(),
+            seminar.isSemAvailable(),
+            seminar.getSemId()});
+
+    }
+     
+     public void removeSeminarById(String semId){
+        String DELETE = " DELETE FROM seminarDate WHERE semId=?";
+        jdbcTemplate.update(DELETE, semId);
+     }
+                
     
     
     protected static final class SeminarMapper implements ParameterizedRowMapper {

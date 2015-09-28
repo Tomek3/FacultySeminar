@@ -75,22 +75,6 @@ public class DatesController extends SimpleFormController {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
         
-        /*
-        if(universalService.loginAvailable(user.getPesel())){
-            mv = new ModelAndView(getSuccessView());
-            mv.addObject("registrationMessage", "Witaj" + user.getName());
-            universalService.addUser(user);
-        } else{
-            String info = "Wprowadz wszystkie dane";
-            mv = new ModelAndView("userRegistrationFailureView");
-            
-            if(!(universalService.loginAvailable(user.getPesel())))
-                info = "Użytkownik istnieje w bazie";
-            
-            
-            mv.addObject("errorInfo", info);
-            
-        }*/
         return mv;
     }
 }

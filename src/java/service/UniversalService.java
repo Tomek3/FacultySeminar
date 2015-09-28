@@ -87,4 +87,20 @@ public class UniversalService {
     public void addSeminar(Seminar seminar) {
         seminarDAO.addSeminar(seminar);
     }
+    
+    public ArrayList<Seminar> getAllSeminars(){
+        return seminarDAO.getAllSeminars();
+    }
+    
+    public Seminar getSeminar(String semId){
+        return seminarDAO.getSeminar(semId);
+    }
+    
+    public void editSeminar(Seminar seminar){
+        seminarDAO.editSeminar(seminar);
+    }
+    
+    public void removeSeminarById(String semId){
+        seminarDAO.removeSeminarById(semId);
+    }
 }

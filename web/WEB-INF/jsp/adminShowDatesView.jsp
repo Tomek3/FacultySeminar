@@ -1,6 +1,6 @@
 <%-- 
-    Document   : panelAdminView
-    Created on : 2015-09-28, 02:04:25
+    Document   : adminShowDatesView
+    Created on : 2015-09-28, 11:02:42
     Author     : Tomek
 --%>
 
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
+    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
             <c:redirect url="index.htm"/>
    </c:if>
     <div id="content">
@@ -31,24 +31,34 @@
         <div id="top">
             <img src="${pageContext.request.contextPath}/img/top.jpg">
         </div>
-
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Panel admina</h1>
+                <h1>Daty seminariów</h1>
                 <hr />
-                <center>
-                    <%--<a href="adminshowusers.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /></a><br />--%>
-                    <a href="register.htm">Dodaj użytkownika</a><br />
-                    <a href="adminshowusers.htm">Pokaż użytkowników</a><br />
-                    <a href="dates.htm">Dodaj daty seminariów</a><br />
-                    <a href="adminshowdates.htm">Pokaż daty seminariów</a><br />
-                    <br />
-                </center>
-                
-                
-                
-                
-                <a href="logout.htm">Wyloguj</a>
+                <div class="tableContainer" >
+                <table >
+                    <tr>
+                        <td>Id</td>
+                        <td>Nazwa</td>
+                        <td >Opis</td>
+                        <td>Data</td>
+                        <td></td>
+                        <td></td>
+                        <c:forEach items="${listOfSeminars}" var="seminar">
+                        <tr>
+                           <td><c:out value="${seminar.semId}"/></td>
+                           <td><c:out value="${seminar.semName}"/></td>
+                           <td><c:out value="${seminar.semDescription}"/></td>
+                           <td><c:out value="${seminar.semDate}"/></td>
+                           <td><a href="admineditdate.htm?semId=${seminar.semId}"><c:out value="Podgląd"/></a></td>
+                           <td><a href="admindeletedate.htm?semId=${seminar.semId}"><c:out value="Usuń"/></a></td>
+                       </tr>
+                    </c:forEach>
+                    </tr>
+                    
+                </table>
+            </div>
+                <a href="paneladmin.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">

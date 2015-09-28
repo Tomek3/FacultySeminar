@@ -53,6 +53,10 @@ public class Seminar {
     public void setSemAvailable(Boolean semAvailable) {
         this.semAvailable = semAvailable;
     }
+    
+     public Boolean getSemAvailable() {
+        return this.semAvailable;
+    }
 
     Integer semId;
     String semName;
