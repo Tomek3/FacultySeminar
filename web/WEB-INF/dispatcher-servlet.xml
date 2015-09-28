@@ -39,5 +39,9 @@
     <bean class="WebsiteControllers.IndexController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.PanelAdminController"  p:universalService-ref="universalService"/>
     <bean class="WebsiteControllers.LogoutController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.AdminShowUsersController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.RegisterController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.AdminDeleteUserController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.AdminEditUserController"  p:universalService-ref="universalService"/>
 
 </beans>

@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
-    <title>WebLibrary</title>
+    <title>FacultySeminar</title>
 </head>
 <body>
     <c:if test="${sessionScope.userPesel != null}">

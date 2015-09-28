@@ -1,6 +1,6 @@
 <%-- 
-    Document   : panelAdminView
-    Created on : 2015-09-28, 02:04:25
+    Document   : adminShowUsersView
+    Created on : 2015-09-28, 02:26:55
     Author     : Tomek
 --%>
 
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <c:if test="${sessionScope.userPesel == null || sessionScope.userGrants != true}">
+    <c:if test="${sessionScope.userGrants==null || sessionScope.userGrants != true}">
             <c:redirect url="index.htm"/>
    </c:if>
     <div id="content">
@@ -31,22 +31,32 @@
         <div id="top">
             <img src="${pageContext.request.contextPath}/img/top.jpg">
         </div>
-
         <div id="info">
                 <!-- TUTAJ ZMIENIAMY ZAWARTOSC -->
-                <h1>Panel admina</h1>
+                <h1>Użytkownicy</h1>
                 <hr />
-                <center>
-                    <%--<a href="adminshowusers.htm"><img src="${pageContext.request.contextPath}/img/wyswietl_uzytkownikow.jpg" /></a><br />--%>
-                    <a href="adminshowusers.htm">Pokaż użytkowników</a><br />
-                    <a href="register.htm">Dodaj użytkownika</a><br />
-                    <br />
-                </center>
-                
-                
-                
-                
-                <a href="logout.htm">Wyloguj</a>
+                <div class="tableContainer" >
+                <table >
+                    <tr>
+                        <td>Login</td>
+                        <td >Imię</td>
+                        <td>Nazwisko</td>
+                        <td></td>
+                        <td></td>
+                        <c:forEach items="${listOfUsers}" var="user">
+                        <tr>
+                           <td><c:out value="${user.pesel}"/></td>
+                           <td><c:out value="${user.name}"/></td>
+                           <td><c:out value="${user.surename}"/></td>
+                           <td><a href="adminedituser.htm?userpesel=${user.pesel}"><c:out value="Podgląd"/></a></td>
+                           <td><a href="admindeleteuser.htm?userpesel=${user.pesel}"><c:out value="Usuń"/></a></td>
+                       </tr>
+                    </c:forEach>
+                    </tr>
+                    
+                </table>
+            </div>
+                <a href="paneladmin.htm">Powrót</a>
         </div>
         <div id="footer">
             <img border="0" src="${pageContext.request.contextPath}/img/stopka.jpg">
