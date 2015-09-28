@@ -37,5 +37,7 @@
           p:viewName="index" />
     
     <bean class="WebsiteControllers.IndexController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.PanelAdminController"  p:universalService-ref="universalService"/>
+    <bean class="WebsiteControllers.LogoutController"  p:universalService-ref="universalService"/>
 
 </beans>

@@ -11,34 +11,37 @@ package User;
  * @author Tomek
  */
 public class LoginData {
-    
-    private String _msg;
-    private String _pesel;
-    private String _password;
-    
-    public LoginData(){}
 
     public String getMsg() {
-        return _msg;
+        return msg;
     }
 
-    public void setMsg(String _msg) {
-        this._msg = _msg;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public String getPesel() {
-        return _pesel;
+        return pesel;
     }
 
-    public void setPesel(String _pesel) {
-        this._pesel = _pesel;
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
     }
 
     public String getPassword() {
-        return _password;
+        return password;
     }
 
-    public void setPassword(String _password) {
-        this._password = _password;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+
+    
+    private String msg;
+    private String pesel;
+    private String password;
+    
+    public LoginData(){}
+
 }
